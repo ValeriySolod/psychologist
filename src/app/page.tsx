@@ -49,10 +49,12 @@ export default function HomePage() {
         <nav className={styles.nav} aria-label="Основна навігація">
           <a className={styles.brand} href="#top"><i />Марина Гнатюк</a>
           <input className={styles.menuToggle} type="checkbox" id="menu-toggle" />
-          <label className={styles.menuButton} htmlFor="menu-toggle" aria-label="Відкрити меню"><span /><span /><span /></label>
-          <div className={styles.navLinks}>
-            <a href="#about">Про мене</a><a href="#people">Кому допомагаю</a><a href="#practices">Практики</a><a className={styles.sosLink} href="#sos">SOS</a><a href="#format">Формат</a>
-            <Button href="#contact">Написати</Button>
+          <label className={styles.menuButton} htmlFor="menu-toggle" aria-label="Відкрити меню"><span className={styles.menuIcon}><span /><span /><span /></span><span className={styles.menuLabel}>Меню сайту</span></label>
+          <div className={styles.navMenu}>
+            <div className={styles.navLinks}>
+              <a href="#about">Про мене</a><a href="#people">Кому допомагаю</a><a href="#practices">Практики</a><a className={styles.sosLink} href="#sos">SOS</a><a href="#format">Формат</a>
+            </div>
+            <div className={styles.navCta}><Button href="#contact">Написати</Button></div>
           </div>
         </nav>
       </header>
@@ -65,7 +67,7 @@ export default function HomePage() {
           <div className={styles.actions}><Button>Написати конфіденційно</Button><Button secondary href="#practices">Подивитись практики</Button></div>
         </div>
         <div className={styles.heroImage}>
-          <Image src="/images/photos/hero-illustration-cutout@2x.png" alt="Жінка серед листя та птахів" width={384} height={256} priority />
+          <Image src="/images/photos/hero-illustration@2x.png" alt="Жінка серед листя та птахів" width={1536} height={1024} priority />
         </div>
       </section>
 

@@ -1,25 +1,29 @@
 .page { overflow: hidden; }
 .wrap { width: min(1280px, calc(100% - 160px)); margin-inline: auto; }
 .header { height: 140px; padding: 24px 80px 40px; }
-.nav { position: relative; z-index: 5; width: min(1280px, 100%); height: 76px; margin: auto; padding: 16px 32px; border-radius: 24px; background: var(--background); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; }
+.nav { position: relative; z-index: 5; width: min(1280px, 100%); height: 76px; margin: auto; padding: 16px 32px; border-radius: 24px; background: var(--background); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 32px; font: 500 24px/32px var(--second-family); white-space: nowrap; }
 .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--sage-primary); transform: rotate(45deg); }
+.navMenu { display: contents; }
 .navLinks { display: flex; align-items: center; }
-.navLinks > a:not(.button) { padding: 8px 16px; color: var(--text-secondary); font-size: 15px; font-weight: 600; line-height: 24px; white-space: nowrap; }
+.navLinks > a { padding: 8px 16px; color: var(--text-secondary); font-size: 15px; font-weight: 600; line-height: 24px; white-space: nowrap; }
 .navLinks .sosLink { color: var(--terracotta-dark) !important; }
+.navCta { display: flex; align-items: center; }
 .menuToggle, .menuButton { display: none; }
 .button, .buttonSecondary { min-height: 44px; padding: 14px 32px; border: 1px solid var(--sage-dark); border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; line-height: 16px; white-space: nowrap; transition: transform .2s, background .2s; }
 .button { background: var(--sage-dark); color: var(--cards); }
 .buttonSecondary { background: transparent; color: var(--sage-dark); }
 .button:hover, .buttonSecondary:hover { transform: translateY(-2px); }
 .actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.heroContent .actions { flex-direction: column; align-items: stretch; }
+.heroContent .actions a { width: 100%; }
 .hero { display: grid; grid-template-columns: 2.06fr 1fr; gap: 24px; }
 .heroContent { min-height: 380px; padding: 32px; border-radius: 24px; background: var(--background-alt); display: flex; flex-direction: column; gap: 24px; }
 .eyebrow, .sectionTitle > span, .personCard > span, .practiceGrid article > span { color: var(--sage-dark); font-size: 13px; font-weight: 800; line-height: 18px; text-transform: uppercase; letter-spacing: 1.82px; }
 .hero h1 { max-width: 780px; margin: -8px 0 0; font: 600 56px/64px var(--second-family); letter-spacing: 0; }
 .heroContent > p, .about > div > p, .sosInner > div > p, .contact p { margin: 0; color: var(--text-secondary); font-size: 18px; line-height: 30px; }
-.heroImage { min-width: 0; border-radius: 24px; background: var(--background); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
-.heroImage img { width: min(100%, 411px); height: auto; }
+.heroImage { min-width: 0; border-radius: 24px; background: var(--background); overflow: hidden; }
+.heroImage img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
 .thoughts { margin-top: 40px; padding: 32px; border-radius: 24px; background: var(--sage-primary); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .thoughts div { min-height: 132px; padding: 24px; border-radius: 16px; background: var(--cards); font: italic 500 20px/28px var(--second-family); }
 .section { padding-top: 40px; }
@@ -85,19 +89,21 @@
   .wrap { width: min(754px, calc(100% - 80px)); }
   .header { height: 136px; padding: 24px 40px 36px; }
   .nav { padding-inline: 24px; }
-  .navLinks { position: absolute; top: 84px; right: 0; width: 270px; padding: 16px 24px; border-radius: 16px; background: var(--background-alt); box-shadow: 0 10px 30px rgba(43,51,48,.14); display: none; flex-direction: column; align-items: stretch; }
+  .navMenu { display: none; position: absolute; top: 84px; right: 0; width: 270px; padding: 16px 24px; border-radius: 16px; background: var(--background-alt); box-shadow: 0 10px 30px rgba(43,51,48,.14); flex-direction: column; align-items: stretch; gap: 16px; }
+  .navLinks { flex-direction: column; align-items: stretch; }
   .navLinks > a { text-align: right; }
-  .menuButton { width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
-  .menuButton span { width: 22px; height: 2px; background: var(--sage-dark); border-radius: 2px; }
-  .menuToggle:checked ~ .navLinks { display: flex; }
+  .navCta a { width: 100%; }
+  .menuButton { min-height: 40px; padding: 8px 16px; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px; cursor: pointer; }
+  .menuIcon { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+  .menuIcon span { width: 22px; height: 2px; background: var(--sage-dark); border-radius: 2px; }
+  .menuLabel { color: var(--sage-dark); font-size: 15px; font-weight: 600; line-height: 24px; white-space: nowrap; }
+  .menuToggle:checked ~ .navMenu { display: flex; }
   .hero { grid-template-columns: 1fr; }
   .heroContent { min-height: 410px; }
   .heroImage { min-height: 330px; }
-  .heroImage img { width: 500px; }
   .thoughts { grid-template-columns: 1fr; }
   .thoughts div { min-height: auto; }
-  .peopleGrid, .practiceGrid { grid-template-columns: 1fr 1fr; }
-  .personCard:last-child, .practiceGrid article:last-child { grid-column: 1 / -1; }
+  .peopleGrid, .practiceGrid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 230px 1fr; }
   .sosInner { grid-template-columns: 1fr; }
   .sos aside { min-height: 250px; }
@@ -116,7 +122,6 @@
   .actions { flex-direction: column; }
   .actions a { width: 100%; }
   .heroImage { min-height: 300px; }
-  .heroImage img { width: 100%; }
   .thoughts { padding: 16px; }
   .thoughts div { padding: 20px; }
   .section { padding-top: 40px; }
@@ -124,7 +129,6 @@
   .peopleGrid, .practiceGrid, .steps { grid-template-columns: 1fr; gap: 24px; }
   .personCard, .practiceGrid article { min-height: auto; padding: 32px; }
   .personCard p { font-size: 16px; line-height: 28px; margin-bottom: 28px; }
-  .personCard:last-child, .practiceGrid article:last-child { grid-column: auto; }
   .about { padding: 16px; grid-template-columns: 1fr; }
   .portrait { height: 430px; }
   .about > div:last-child { padding: 16px; }
