@@ -117,7 +117,7 @@
   .nav { height: 76px; padding: 16px; }
   .brand { gap: 16px; font-size: 20px; }
   .heroContent { min-height: auto; padding: 24px; }
-  .hero h1 { font-size: 40px; line-height: 48px; }
+  .hero h1 { font-size: 32px; line-height: 125%; letter-spacing: -0.01em; }
   .heroContent > p, .about > div > p, .sosInner > div > p, .contact p { font-size: 16px; line-height: 28px; }
   .actions { flex-direction: column; }
   .actions a { width: 100%; }
@@ -125,7 +125,7 @@
   .thoughts { padding: 16px; }
   .thoughts div { padding: 20px; }
   .section { padding-top: 40px; }
-  .eyebrow, .sectionTitle > span, .personCard > span, .practiceGrid article > span { font-size: 12px; line-height: 167%; letter-spacing: 0.14em; }
+  .eyebrow, .sectionTitle > span, .personCard > span, .practiceGrid article > span { font-size: 12px; line-height: 167%; letter-spacing: 0.14em; text-transform: none; }
   .sectionTitle h2 { font-family: var(--second-family); font-weight: 600; font-size: 26px; line-height: 123%; letter-spacing: -0.01em; color: var(--text-primary); }
   .about .sectionTitle h2 { font-family: var(--second-family); font-weight: 500; font-size: 20px; line-height: 140%; letter-spacing: normal; color: var(--text-primary); }
   .peopleGrid, .practiceGrid, .steps { grid-template-columns: 1fr; gap: 24px; }
