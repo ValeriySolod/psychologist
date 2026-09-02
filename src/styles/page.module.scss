@@ -7,7 +7,7 @@
 .navMenu { display: contents; }
 .navLinks { display: flex; align-items: center; }
 .navLinks > a { padding: 8px 16px; color: var(--text-secondary); font-size: 15px; font-weight: 600; line-height: 24px; white-space: nowrap; }
-.navLinks .sosLink { color: var(--terracotta-dark) !important; }
+.navLinks .sosLink { color: var(--terracotta-dark); }
 .navCta { display: flex; align-items: center; }
 .menuToggle, .menuButton { display: none; }
 .button, .buttonSecondary { min-height: 44px; padding: 14px 32px; border: 1px solid var(--sage-dark); border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; line-height: 16px; white-space: nowrap; transition: transform .2s, background .2s; }
@@ -25,6 +25,7 @@
 .heroContent > p, .about > div > p, .sosInner > div > p, .contact p { margin: 0; color: var(--text-secondary); font-size: 18px; line-height: 30px; }
 .heroImage { min-width: 0; border-radius: 24px; background: var(--background); overflow: hidden; }
 .heroImage img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+.heroIllustrationTablet { display: none; }
 .thoughts { margin-top: 40px; padding: 32px; border-radius: 24px; background: var(--sage-primary); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .thoughts div { min-height: 132px; padding: 24px; border-radius: 16px; background: var(--cards); font: italic 500 20px/28px var(--second-family); }
 .section { padding-top: 40px; }
@@ -90,8 +91,8 @@
 
 @media (max-width: 1100px) {
   .wrap { width: min(754px, calc(100% - 80px)); }
-  .header { height: 136px; padding: 24px 40px 36px; }
-  .nav { padding-inline: 24px; }
+  .header { height: 136px; padding: 24px 40px 40px; }
+  .nav { height: 72px; }
   .navMenu { display: none; position: absolute; top: 84px; right: 0; width: 270px; padding: 16px 24px; border-radius: 16px; background: var(--background-alt); box-shadow: 0 10px 30px rgba(43,51,48,.14); flex-direction: column; align-items: stretch; gap: 16px; }
   .navLinks { flex-direction: column; align-items: stretch; }
   .navLinks > a { text-align: right; }
@@ -109,11 +110,53 @@
   .thoughts { grid-template-columns: 1fr; }
   .thoughts div { min-height: auto; }
   .peopleGrid, .practiceGrid { grid-template-columns: 1fr; }
-  .about { grid-template-columns: 230px 1fr; }
+  .personCard, .practiceGrid article { min-height: auto; }
+  .about { grid-template-columns: 200px 1fr; }
   .sosInner { grid-template-columns: 1fr; }
   .sos aside { min-height: 250px; }
   .steps { grid-template-columns: 1fr; }
   .steps article { min-height: 180px; }
+}
+
+@media (max-width: 1100px) and (min-width: 621px) {
+  .hero { position: relative; overflow: hidden; border-radius: 24px; }
+  .heroContent { position: relative; min-height: 0; }
+  .heroContent > p { max-width: 430px; }
+  .heroContent .actions { width: 333px; }
+  .heroImage { display: none; }
+  .heroIllustrationTablet { display: block; position: absolute; left: 377px; top: 228px; width: 441px; height: 282px; }
+  .heroIllustrationTablet img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+  .hero h1 { letter-spacing: -0.56px; }
+        :global(#people) .sectionTitle h2,
+        :global(#practices) .sectionTitle h2,
+        :global(#format) .sectionTitle h2 {
+          white-space: nowrap;
+        }
+  .about { gap: 24px; box-shadow: 0 2px 2px rgba(0, 0, 0, .08); }
+  .portrait { height: 266px; border-radius: 16px; }
+  .about .sectionTitle h2 { font: 500 24px/32px var(--second-family); letter-spacing: normal; }
+  .about .bullets { margin-top: 24px; }
+  .practices { background: var(--white); }
+  .practiceGrid h3 { min-height: auto; max-width: none; }
+  .sos { padding: 40px; border-radius: 24px; }
+  .sos .sectionTitle h2 { max-width: 548px; }
+  .sosInner { grid-template-columns: 1fr; gap: 0; border-radius: 16px; box-shadow: 0 24px 30px rgba(185, 111, 66, .14); }
+  .sosInner > div:first-child { display: contents; }
+  .sosInner > div > p { max-width: 548px; }
+  .sos aside { order: 1; min-height: auto; margin-top: 24px; }
+  .sos small { order: 2; max-width: 548px; }
+  .steps article { padding: 24px; min-height: auto; }
+  .steps article:nth-child(2), .steps article:nth-child(3) { min-height: 184px; }
+  .testimonials { padding: 32px; }
+  .breathingFrame { margin-inline: 0; }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+  :global(#people) .sectionTitle h2,
+  :global(#practices) .sectionTitle h2,
+  :global(#format) .sectionTitle h2 {
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 620px) {

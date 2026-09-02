@@ -61,6 +61,9 @@ export default function HomePage() {
 
       <section className={`${styles.hero} ${styles.wrap}`} id="top">
         <div className={styles.heroContent}>
+          <div className={styles.heroIllustrationTablet}>
+            <Image src="/images/photos/hero-illustration-cutout@2x.png" alt="Жінка серед листя та птахів" width={384} height={256} />
+          </div>
           <span className={styles.eyebrow}>Психологічна підтримка під час війни</span>
           <h1>Ви тримаєте фронт, якого ніхто не бачить.</h1>
           <p>Волонтерите, працюєте, тримаєте на собі родину — і водночас несете тривогу, яку нема з ким розділити. Тут можна нарешті визнати: щоб допомагати далі, вам теж потрібна опора.</p>

@@ -16,9 +16,9 @@
   --dusty-blue: #7c93a3;
   --text-secondary: #5b655f;
   --text-primary: #2b3330;
-  --font-family: "Manrope", "Segoe UI", sans-serif;
-  --second-family: "Playfair Display", Georgia, serif;
-  --third-family: "Nunito Sans", "Segoe UI", sans-serif;
+  --font-family: var(--font-manrope), "Manrope", "Segoe UI", sans-serif;
+  --second-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --third-family: var(--font-nunito), "Nunito Sans", "Segoe UI", sans-serif;
   --font3: "Roboto", Arial, sans-serif;
   color-scheme: light;
 }
