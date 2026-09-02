@@ -90,12 +90,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.wrap}`} id="practices">
-        <SectionTitle label="Практики, які можна спробувати вже зараз" title="Кілька інструментів для щоденної опори" />
-        <div className={styles.practiceGrid}>
-          <article><span>Заземлення</span><h3>Техніка 5–4–3–2–1</h3><p>Коли тривога забирає відчуття «тут і зараз» — це швидкий спосіб повернути увагу до тіла й простору.</p><CheckList items={["5 речей, які бачите навколо", "4 речі, яких торкаєтесь", "3 звуки, які чуєте", "2 запахи, які відчуваєте", "1 глибокий видих"]} /></article>
-          <article><span>Дихання за квадратом</span><h3>Box breathing 4×4</h3><p>Рівномірний ритм заспокоює нервову систему за кілька хвилин: вдих, пауза, видих, пауза — по чотири рахунки.</p><Image className={styles.breathing} src="/images/photos/breathing-exercise-steps-cutout@2x.png" alt="Схема дихання за квадратом" width={384} height={256} /></article>
-          <article><span>Для батьків</span><h3>Підтримка дитини при тривозі</h3><p>Дитина зчитує стан дорослого швидше за слова. Кілька простих опор для гострого моменту.</p><CheckList items={["Спершу — власний спокійний видих, потім слова", "Назвіть почуття дитини вголос: «Тобі страшно, я поруч»", "Дихайте разом — рахунок або пальці замість пояснень", "Після — коротка звична дія: казка, гра, обійми"]} /></article>
+      <section className={styles.practices} id="practices">
+        <div className={styles.wrap}>
+          <SectionTitle label="Практики, які можна спробувати вже зараз" title="Кілька інструментів для щоденної опори" />
+          <div className={styles.practiceGrid}>
+            <article><span>Заземлення</span><h3>Техніка 5–4–3–2–1</h3><p>Коли тривога забирає відчуття «тут і зараз» — це швидкий спосіб повернути увагу до тіла й простору.</p><CheckList items={["5 речей, які бачите навколо", "4 речі, яких торкаєтесь", "3 звуки, які чуєте", "2 запахи, які відчуваєте", "1 глибокий видих"]} /></article>
+            <article><span>Дихання за квадратом</span><h3>Box breathing 4×4</h3><p>Рівномірний ритм заспокоює нервову систему за кілька хвилин: вдих, пауза, видих, пауза — по чотири рахунки.</p><div className={styles.breathingFrame}><Image className={styles.breathing} src="/images/photos/breathing-exercise-steps-cutout@2x.png" alt="Вдих — вправа дихання за квадратом" width={384} height={256} /></div></article>
+            <article><span>Для батьків</span><h3>Підтримка дитини при тривозі</h3><p>Дитина зчитує стан дорослого швидше за слова. Кілька простих опор для гострого моменту.</p><CheckList items={["Спершу — власний спокійний видих, потім слова", "Назвіть почуття дитини вголос: «Тобі страшно, я поруч»", "Дихайте разом — рахунок або пальці замість пояснень", "Після — коротка звична дія: казка, гра, обійми"]} /></article>
+          </div>
         </div>
       </section>
 
@@ -113,7 +115,7 @@ export default function HomePage() {
 
       <section className={`${styles.testimonials} ${styles.wrap}`}>
         <SectionTitle label="Відгуки" title="Що кажуть після кількох сесій" />
-        <div><blockquote>«Довго вважав, що звертатись по допомогу — це ніби визнати, що я слабший за інших. Виявилось навпаки: стало легше саме допомагати далі.»<cite>— А., волонтер</cite></blockquote><blockquote>«Вперше за довгий час хтось запитав, як почуваюсь я, а не тільки “як там на фронті у чоловіка”. Це було саме те, чого не вистачало.»<cite>— К., мама двох дітей</cite></blockquote></div>
+        <div className={styles.testimonialsRow}><blockquote>«Довго вважав, що звертатись по допомогу — це ніби визнати, що я слабший за інших. Виявилось навпаки: стало легше саме допомагати далі.»<cite>— А., волонтер</cite></blockquote><blockquote>«Вперше за довгий час хтось запитав, як почуваюсь я, а не тільки “як там на фронті у чоловіка”. Це було саме те, чого не вистачало.»<cite>— К., мама двох дітей</cite></blockquote></div>
       </section>
 
       <section className={`${styles.contact} ${styles.wrap}`} id="contact"><div><SectionTitle label="Контакт" title="Один крок — коротке повідомлення" /><p>Не потрібно формулювати ідеально чи пояснювати «чому саме зараз». Досить написати те, що є.</p><div className={styles.actions}><Button>Написати в Telegram</Button><Button secondary>Написати в WhatsApp</Button></div></div></section>
