@@ -54,7 +54,7 @@
 .checkList li { min-height: 24px; display: flex; align-items: center; gap: 16px; color: var(--text-secondary); font-size: 15px; font-weight: 600; line-height: 24px; letter-spacing: 0.15px; }
 .checkList i { width: 16px; height: 16px; flex: 0 0 auto; border: 1px solid var(--sage-dark); border-radius: 4px; }
 .breathingFrame { width: 155px; height: 200px; margin: 0 auto; overflow: hidden; position: relative; }
-.breathing { position: absolute; top: -55px; left: 0; width: 465px; max-width: none; height: auto; }
+.breathing { object-fit: cover; }
 .sos { margin-top: 40px; padding: 16px; border-radius: 8px; background: var(--terracotta-dark); }
 .sosInner { padding: 32px; border-radius: 8px; background: var(--cards); display: grid; grid-template-columns: 1fr .92fr; gap: 32px; }
 .sos .sectionTitle { gap: 16px; }
