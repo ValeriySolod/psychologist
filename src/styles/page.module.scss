@@ -35,7 +35,8 @@
 .personCard { min-height: 444px; padding: 32px; border-radius: 26px; border-top: 5px solid var(--sage-primary); background: var(--cards); box-shadow: 0 2px 2px rgba(0,0,0,.08); display: flex; flex-direction: column; }
 .personCard[data-tone="1"] { border-color: var(--dusty-blue); }
 .personCard[data-tone="2"] { border-color: var(--terracotta-accent); }
-.personCard h3, .practiceGrid h3, .steps h3 { margin: 8px 0 24px; font: 500 24px/32px var(--second-family); }
+.personCard h3, .steps h3 { margin: 8px 0 24px; font: 500 24px/32px var(--second-family); }
+.practiceGrid h3 { margin: 0; font: 500 24px/32px var(--second-family); }
 .personCard p { margin: 0; font-size: 18px; line-height: 30px; }
 .personCard strong { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--sage-primary); color: var(--sage-dark); font-size: 15px; line-height: 24px; }
 .about { margin-top: 40px; padding: 32px; border-radius: 24px; background: var(--dusty-blue-pale); display: grid; grid-template-columns: 278px 1fr; gap: 32px; }
@@ -45,12 +46,12 @@
 .bullets { margin: 18px 0 0; padding: 0; list-style: none; color: var(--text-secondary); font-size: 15px; line-height: 24px; }
 .bullets li { position: relative; padding: 5px 0 5px 20px; }
 .bullets li::before { content: ""; position: absolute; left: 0; top: 13px; width: 8px; height: 8px; border-radius: 50%; background: var(--sage-primary); }
-.practices { padding-top: 40px; background: var(--background); }
-.practiceGrid article { min-height: 492px; padding: 32px; border-radius: 26px; background: var(--cards); }
-.practiceGrid h3 { margin-bottom: 16px; min-height: 64px; max-width: 320px; }
-.practiceGrid article > p { margin: 0 0 16px; color: var(--text-secondary); font-size: 18px; line-height: 30px; }
+.practices { padding-top: 40px; background: var(--white); }
+:global(#practices) .sectionTitle h2 { letter-spacing: -0.18px; }
+.practiceGrid article { display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 26px; background: var(--cards); }
+.practiceGrid article > p { margin: 0; color: var(--text-secondary); font-size: 18px; line-height: 30px; }
 .checkList { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.checkList li { min-height: 24px; display: flex; align-items: center; gap: 16px; color: var(--text-secondary); font-size: 15px; line-height: 24px; }
+.checkList li { min-height: 24px; display: flex; align-items: center; gap: 16px; color: var(--text-secondary); font-size: 15px; font-weight: 600; line-height: 24px; letter-spacing: 0.15px; }
 .checkList i { width: 16px; height: 16px; flex: 0 0 auto; border: 1px solid var(--sage-dark); border-radius: 4px; }
 .breathingFrame { width: 155px; height: 200px; margin: 0 auto; overflow: hidden; position: relative; }
 .breathing { position: absolute; top: -55px; left: 0; width: 465px; max-width: none; height: auto; }
@@ -179,6 +180,7 @@
   .section { padding-top: 40px; }
   .eyebrow, .sectionTitle > span, .personCard > span, .practiceGrid article > span { font-size: 12px; line-height: 167%; letter-spacing: 0.14em; text-transform: none; }
   .sectionTitle h2 { font-family: var(--second-family); font-weight: 600; font-size: 26px; line-height: 123%; letter-spacing: -0.01em; color: var(--text-primary); }
+  :global(#practices) .sectionTitle h2 { letter-spacing: -0.13px; }
   .about .sectionTitle h2 { font-family: var(--second-family); font-weight: 500; font-size: 20px; line-height: 140%; letter-spacing: normal; color: var(--text-primary); }
   .peopleGrid, .practiceGrid, .steps { grid-template-columns: 1fr; gap: 24px; }
   .personCard, .practiceGrid article { min-height: auto; padding: 32px; }
@@ -186,7 +188,8 @@
   .about { padding: 16px; grid-template-columns: 1fr; }
   .portrait { height: 430px; }
   .about > div:last-child { padding: 16px; }
-  .practiceGrid article > p { font-size: 16px; line-height: 28px; }
+  .practiceGrid h3 { font-size: 20px; line-height: 28px; }
+  .practiceGrid article > p { font-size: 17px; line-height: 28px; }
   .sos { padding: 16px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; }
   .sosInner { width: 100%; grid-template-columns: minmax(0, 1fr); padding-top: 32px; padding-right: 32px; padding-bottom: 32px; padding-left: 32px; gap: 0; border-radius: 16px; box-shadow: 0 24px 60px rgba(185, 111, 66, .14); }
   .sosInner > div:first-child { display: contents; }
