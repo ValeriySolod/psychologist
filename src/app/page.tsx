@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.scss";
+import BreathingIllustration from "@/components/BreathingIllustration";
 
 const contactUrl = "https://t.me/";
 
@@ -98,7 +99,7 @@ export default function HomePage() {
           <SectionTitle label="Практики, які можна спробувати вже зараз" title="Кілька інструментів для щоденної опори" />
           <div className={styles.practiceGrid}>
             <article><span>Заземлення</span><h3>Техніка 5–4–3–2–1</h3><p>Коли тривога забирає відчуття «тут і зараз» — це швидкий спосіб повернути увагу до тіла й простору.</p><CheckList items={["5 речей, які бачите навколо", "4 речі, яких торкаєтесь", "3 звуки, які чуєте", "2 запахи, які відчуваєте", "1 глибокий видих"]} /></article>
-            <article><span>Дихання за квадратом</span><h3>Box breathing 4×4</h3><p>Рівномірний ритм заспокоює нервову систему за кілька хвилин: вдих, пауза, видих, пауза — по чотири рахунки.</p><div className={styles.breathingFrame}><Image className={styles.breathing} src="/images/photos/breathing-exercise-steps-cutout@2x.png" alt="Вдих — вправа дихання за квадратом" width={384} height={256} /></div></article>
+            <article><span>Дихання за квадратом</span><h3>Box breathing 4×4</h3><p>Рівномірний ритм заспокоює нервову систему за кілька хвилин: вдих, пауза, видих, пауза — по чотири рахунки.</p><BreathingIllustration /></article>
             <article><span>Для батьків</span><h3>Підтримка дитини при тривозі</h3><p>Дитина зчитує стан дорослого швидше за слова. Кілька простих опор для гострого моменту.</p><CheckList items={["Спершу — власний спокійний видих, потім слова", "Назвіть почуття дитини вголос: «Тобі страшно, я поруч»", "Дихайте разом — рахунок або пальці замість пояснень", "Після — коротка звична дія: казка, гра, обійми"]} /></article>
           </div>
         </div>
