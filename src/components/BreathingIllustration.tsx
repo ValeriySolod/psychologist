@@ -22,18 +22,23 @@ export default function BreathingIllustration() {
     return () => clearInterval(id);
   }, []);
 
-  const current = breathingSteps[step];
-
   return (
     <div className={styles.breathingFrame}>
-      <Image
-        key={current.src}
-        className={styles.breathing}
-        src={current.src}
-        alt={current.alt}
-        fill
-        sizes="155px"
-      />
+      {breathingSteps.map((item, index) => (
+        <Image
+          key={item.src}
+          className={styles.breathing}
+          src={item.src}
+          alt={index === step ? item.alt : ""}
+          aria-hidden={index !== step}
+          style={{ opacity: index === step ? 1 : 0 }}
+          fill
+          sizes="155px"
+          loading="eager"
+        />
+      ))}
     </div>
   );
 }
+
+ 
