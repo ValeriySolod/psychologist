@@ -1,3 +1,8 @@
+## Contributors
+
+- Designer: **Olha Kasimova**
+- Developer: **Valerii Solod**
+
 # Psychologist
 
 This project is an initial Next.js 15 foundation for a psychologist website.
