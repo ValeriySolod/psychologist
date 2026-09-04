@@ -4,6 +4,8 @@ import BreathingIllustration from "@/components/BreathingIllustration";
 import ContactMethodsButton from "@/components/ContactMethodsModal";
 
 const contactUrl = "https://t.me/";
+const marqueeText = "Просити про підтримку - це не слабкість! Це опора!";
+const marqueeRepeats = Array.from({ length: 4 });
 
 const people = [
   {
@@ -44,6 +46,18 @@ function CheckList({ items }: { items: string[] }) {
   return <ul className={styles.checkList}>{items.map((item) => <li key={item}><i aria-hidden="true" />{item}</li>)}</ul>;
 }
 
+function Marquee() {
+  return (
+    <div className={styles.marquee}>
+      <div className={styles.marqueeTrack} aria-hidden="true">
+        <div className={styles.marqueeGroup}>{marqueeRepeats.map((_, index) => <span key={index}>{marqueeText}</span>)}</div>
+        <div className={styles.marqueeGroup}>{marqueeRepeats.map((_, index) => <span key={index}>{marqueeText}</span>)}</div>
+      </div>
+      <span className={styles.srOnly}>{marqueeText}</span>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <main className={styles.page}>
@@ -59,6 +73,7 @@ export default function HomePage() {
             <div className={styles.navCta}><Button href="#contact">Написати</Button></div>
           </div>
         </nav>
+        <Marquee />
       </header>
 
       <section className={`${styles.hero} ${styles.wrap}`} id="top">

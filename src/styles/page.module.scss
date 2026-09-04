@@ -1,6 +1,19 @@
 .page { overflow: hidden; }
 .wrap { width: min(1280px, calc(100% - 160px)); margin-inline: auto; }
-.header { height: 140px; padding: 24px 80px 40px; }
+.header { position: relative; height: 140px; padding: 24px 80px 40px; }
+.marquee { position: absolute; left: 0; right: 0; bottom: 0; height: 40px; overflow: hidden; display: flex; align-items: center; }
+.marqueeTrack { display: flex; align-items: center; width: max-content; animation: marqueeScroll 32s linear infinite; }
+.marqueeGroup { display: flex; align-items: center; flex: 0 0 auto; }
+.marqueeGroup span { flex: 0 0 auto; padding-right: 64px; color: var(--sage-dark); font: 700 14px/24px var(--font-family); letter-spacing: .2px; white-space: nowrap; }
+.srOnly { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack { animation-duration: 180s; }
+}
 .nav { position: relative; z-index: 5; width: min(1280px, 100%); height: 76px; margin: auto; padding: 16px 32px; border-radius: 24px; background: var(--background); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 32px; font: 500 24px/32px var(--second-family); white-space: nowrap; }
 .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--sage-primary); transform: rotate(45deg); }
@@ -180,6 +193,7 @@
   .practiceGrid h3 { min-height: auto; max-width: none; }
   .sos { padding: 40px; border-radius: 24px; }
   .sos .sectionTitle h2 { max-width: 548px; }
+  .sos .button { display: flex; height: 44px; padding: 16px 32px; gap: 8px; flex: 1 0 0; }
   .sosInner { grid-template-columns: 1fr; gap: 0; border-radius: 16px; box-shadow: 0 24px 30px rgba(185, 111, 66, .14); }
   .sosInner > div:first-child { display: contents; }
   .sosInner > div > p { max-width: 548px; }
@@ -229,6 +243,7 @@
   .sosInner > div > p { font-size: 17px; line-height: 28px; }
   .sos .sectionTitle h2 { max-width: 210px; font: italic 500 20px/28px var(--second-family); letter-spacing: normal; }
   .sos .actions { gap: 8px; }
+  .sos .buttonSecondary { flex: none; align-self: stretch; }
   .sos aside { order: 1; min-height: auto; margin-top: 24px; padding: 28px; border-radius: 24px; }
   .sosCircleWrap { --sos-circle: 118px; }
   .sosNumber { font-size: 36px; line-height: 40px; }
