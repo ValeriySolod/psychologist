@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.scss";
 import BreathingIllustration from "@/components/BreathingIllustration";
+import ContactMethodsButton from "@/components/ContactMethodsModal";
 
 const contactUrl = "https://t.me/";
 
@@ -107,8 +108,15 @@ export default function HomePage() {
 
       <section className={`${styles.sos} ${styles.wrap}`} id="sos">
         <div className={styles.sosInner}>
-          <div><SectionTitle label="SOS-підтримка" title="Потрібна підтримка просто зараз?" /><p>Якщо гостра тривога, паніка чи важкий момент — не чекайте запланованої сесії. Напишіть одним повідомленням, і я відповім, щойно зможу.</p><div className={styles.actions}><Button>Telegram — написати зараз</Button><Button secondary>WhatsApp</Button></div><small>Якщо йдеться про загрозу життю — це не по моїй лінії. Зателефонуйте на національну гарячу лінію Lifeline Ukraine — <b>7333</b>, вона працює цілодобово та безкоштовно.</small></div>
-          <aside><strong>7333</strong><p>Lifeline Ukraine — цілодобова лінія з питань психічного здоров&apos;я та кризових станів</p></aside>
+          <div><SectionTitle label="SOS-підтримка" title="Потрібна підтримка просто зараз?" /><p>Якщо гостра тривога, паніка чи важкий момент — не чекайте запланованої сесії. Напишіть одним повідомленням, і я відповім, щойно зможу.</p><div className={styles.actions}><Button>Telegram — написати зараз</Button><ContactMethodsButton className={styles.buttonSecondary}>Інші способи зв’язку</ContactMethodsButton></div><small>Якщо йдеться про загрозу життю — це не по моїй лінії. Зателефонуйте на національну гарячу лінію Lifeline Ukraine — <b>7333</b>, вона працює цілодобово та безкоштовно.</small></div>
+          <aside>
+            <strong>Lifeline Ukraine</strong>
+            <div className={styles.sosCircleWrap}>
+              <span className={styles.sosRings} aria-hidden="true"><i /><i /><i /></span>
+              <span className={styles.sosNumber}>7333</span>
+            </div>
+            <p>*цілодобова лінія з питань психічного здоров&apos;я та кризових станів</p>
+          </aside>
         </div>
       </section>
 
