@@ -1,10 +1,10 @@
 .page { overflow: hidden; }
 .wrap { width: min(1280px, calc(100% - 160px)); margin-inline: auto; }
 .header { position: relative; height: 140px; padding: 24px 80px 40px; }
-.marquee { position: absolute; left: 0; right: 0; bottom: 0; height: 40px; overflow: hidden; display: flex; align-items: center; }
+.marquee { position: relative; width: 100%; margin-top: 40px; height: 64px; overflow: hidden; display: flex; align-items: center; }
 .marqueeTrack { display: flex; align-items: center; width: max-content; animation: marqueeScroll 32s linear infinite; }
 .marqueeGroup { display: flex; align-items: center; flex: 0 0 auto; }
-.marqueeGroup span { flex: 0 0 auto; padding-right: 64px; color: var(--sage-dark); font: 700 14px/24px var(--font-family); letter-spacing: .2px; white-space: nowrap; }
+.marqueeGroup span { flex: 0 0 auto; padding-right: 64px; color: var(--text-primary); font: italic 600 36px/64px var(--second-family); letter-spacing: .72px; white-space: nowrap; }
 .srOnly { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 @keyframes marqueeScroll {
@@ -33,7 +33,8 @@
 .heroContent { min-height: 380px; padding: 32px; border-radius: 24px; background: var(--background-alt); display: flex; flex-direction: column; gap: 24px; }
 .eyebrow, .sectionTitle > span, .personCard > span, .practiceGrid article > span { font-size: 13px; font-weight: 800; line-height: 18px; text-transform: uppercase; letter-spacing: 1.82px; }
 .eyebrow, .sectionTitle > span, .personCard > span { color: var(--sage-dark); }
-.practiceGrid article > span { color: var(--dusty-blue); }
+.practiceGrid article > span { color: var(--dusty-blue); text-transform: none; }
+.practices .sectionTitle > span { text-transform: none; }
 .hero h1 { max-width: 780px; margin: -8px 0 0; font: 600 56px/64px var(--second-family); letter-spacing: 0; }
 .heroContent > p, .about > div > p, .sosInner > div > p, .contact p { margin: 0; color: var(--text-secondary); font-size: 18px; line-height: 30px; }
 .heroImage { min-width: 0; border-radius: 24px; background: var(--background); overflow: hidden; }
@@ -58,7 +59,7 @@
 .personCard[data-tone="1"] { border-color: var(--dusty-blue); }
 .personCard[data-tone="2"] { border-color: var(--terracotta-accent); }
 .personCard h3, .steps h3 { margin: 8px 0 24px; font: 500 24px/32px var(--second-family); }
-.practiceGrid h3 { margin: 0; font: 500 24px/32px var(--second-family); }
+.practiceGrid h3 { margin: -8px 0 0; min-height: 64px; font: 500 24px/32px var(--second-family); }
 .personCard p { margin: 0; font-size: 18px; line-height: 30px; }
 .personCard strong { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--sage-primary); color: var(--sage-dark); font-size: 15px; line-height: 24px; }
 .about { margin-top: 40px; padding: 32px; border-radius: 24px; background: var(--dusty-blue-pale); display: grid; grid-template-columns: 278px 1fr; gap: 32px; }
@@ -70,11 +71,11 @@
 .bullets li::before { content: ""; position: absolute; left: 0; top: 13px; width: 8px; height: 8px; border-radius: 50%; background: var(--sage-primary); }
 .practices { padding-top: 40px; background: var(--white); }
 :global(#practices) .sectionTitle h2 { letter-spacing: -0.18px; }
-.practiceGrid article { display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 26px; background: var(--cards); }
+.practiceGrid article { min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 26px; background: var(--cards); }
 .practiceGrid article > p { margin: 0; color: var(--text-secondary); font-size: 18px; line-height: 30px; }
 .checkList { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .checkList li { min-height: 24px; display: flex; align-items: center; gap: 16px; color: var(--text-secondary); font-size: 15px; font-weight: 600; line-height: 24px; letter-spacing: 0.15px; }
-.checkList i { width: 16px; height: 16px; flex: 0 0 auto; border: 1px solid var(--sage-dark); border-radius: 4px; }
+
 .breathingFrame { width: 155px; height: 200px; margin: 0 auto; overflow: hidden; position: relative; }
 .breathing {
   object-fit: cover;
@@ -235,7 +236,7 @@
   .about { padding: 16px; grid-template-columns: 1fr; }
   .portrait { height: 430px; }
   .about > div:last-child { padding: 16px; }
-  .practiceGrid h3 { font-size: 20px; line-height: 28px; }
+  .practiceGrid h3 { min-height: auto; font-size: 20px; line-height: 28px; }
   .practiceGrid article > p { font-size: 17px; line-height: 28px; }
   .sos { padding: 16px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; }
   .sosInner { width: 100%; grid-template-columns: minmax(0, 1fr); padding-top: 32px; padding-right: 32px; padding-bottom: 32px; padding-left: 32px; gap: 0; border-radius: 16px; box-shadow: 0 24px 60px rgba(185, 111, 66, .14); }

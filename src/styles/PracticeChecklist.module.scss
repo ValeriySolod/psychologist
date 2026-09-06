@@ -1,0 +1,68 @@
+.checkList {
+  width: 100%;
+
+  label { display: flex; align-items: center; gap: 16px; width: 100%; cursor: pointer; }
+  input { appearance: none; flex: 0 0 16px; width: 16px; height: 16px; margin: 0; border: 1px solid var(--sage-dark); border-radius: 4px; background: transparent; cursor: pointer; }
+  label:hover input { border-color: var(--sage-primary); }
+  input:checked { border: 0; background: url("/images/icons/practices/checked.svg") center / 16px 16px no-repeat; }
+  input:checked + span { text-decoration: line-through; }
+  input:focus-visible { outline: 2px solid var(--sage-dark); outline-offset: 4px; }
+  span { min-width: 0; }
+}
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  color: var(--text-primary);
+  border: 0;
+  margin: auto;
+  gap: 24px;
+  align-items: center;
+
+  &::backdrop { background: rgba(43, 51, 48, .45); }
+  &:not([open]) { display: none; }
+}
+
+.success {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+
+  img { position: absolute; left: -4px; top: -2px; width: 78px; height: 78px; max-width: none; }
+}
+
+.description {
+  width: 100%;
+  text-align: center;
+
+  h2 { margin: 0; font: 600 26px/32px var(--second-family); letter-spacing: -.13px; }
+  p { margin: 8px 0 0; color: var(--text-secondary); font: 400 18px/30px var(--font-family); }
+}
+
+.rating {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  legend { width: 100%; padding: 0; text-align: center; font: italic 500 20px/28px var(--second-family); }
+}
+
+.stars { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+.star {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  cursor: pointer;
+
+  input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  input:focus-visible + img { outline: 2px solid var(--sage-dark); outline-offset: 2px; border-radius: 4px; }
+  img { width: 36px; height: 36px; }
+}
+
+@media (max-width: 620px) {
+  .dialog { padding: 40px 24px; }
+}

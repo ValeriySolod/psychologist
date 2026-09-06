@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.scss";
+import PracticeChecklist from "@/components/PracticeChecklist";
+import { groundingPractice, parentingPractice } from "@/lib/practices";
 import BreathingIllustration from "@/components/BreathingIllustration";
 import ContactMethodsButton from "@/components/ContactMethodsModal";
 
@@ -42,10 +44,6 @@ function Button({ children, secondary = false, href = contactUrl }: { children: 
   return <a className={secondary ? styles.buttonSecondary : styles.button} href={href}>{children}</a>;
 }
 
-function CheckList({ items }: { items: string[] }) {
-  return <ul className={styles.checkList}>{items.map((item) => <li key={item}><i aria-hidden="true" />{item}</li>)}</ul>;
-}
-
 function Marquee() {
   return (
     <div className={styles.marquee}>
@@ -73,7 +71,6 @@ export default function HomePage() {
             <div className={styles.navCta}><Button href="#contact">Написати</Button></div>
           </div>
         </nav>
-        <Marquee />
       </header>
 
       <section className={`${styles.hero} ${styles.wrap}`} id="top">
@@ -102,6 +99,8 @@ export default function HomePage() {
         <div className={styles.peopleGrid}>{people.map((person, index) => <article className={styles.personCard} data-tone={index} key={person.name}><span>{person.meta}</span><h3>{person.name}</h3><p>{person.story}</p><strong>{person.result}</strong></article>)}</div>
       </section>
 
+      <Marquee />
+
       <section className={`${styles.about} ${styles.wrap}`} id="about">
         <div className={styles.portrait}><Image src="/images/photos/therapist-portrait@2x.jpg" alt="Психологиня Марина Гнатюк" width={714} height={1071} /></div>
         <div><SectionTitle label="Про мене" title="Психологиня-коучиня, яка розуміє контекст війни зсередини" />
@@ -114,9 +113,9 @@ export default function HomePage() {
         <div className={styles.wrap}>
           <SectionTitle label="Практики, які можна спробувати вже зараз" title="Кілька інструментів для щоденної опори" />
           <div className={styles.practiceGrid}>
-            <article><span>Заземлення</span><h3>Техніка 5–4–3–2–1</h3><p>Коли тривога забирає відчуття «тут і зараз» — це швидкий спосіб повернути увагу до тіла й простору.</p><CheckList items={["5 речей, які бачите навколо", "4 речі, яких торкаєтесь", "3 звуки, які чуєте", "2 запахи, які відчуваєте", "1 глибокий видих"]} /></article>
-            <article><span>Дихання за квадратом</span><h3>Box breathing 4×4</h3><p>Рівномірний ритм заспокоює нервову систему за кілька хвилин: вдих, пауза, видих, пауза — по чотири рахунки.</p><BreathingIllustration /></article>
-            <article><span>Для батьків</span><h3>Підтримка дитини при тривозі</h3><p>Дитина зчитує стан дорослого швидше за слова. Кілька простих опор для гострого моменту.</p><CheckList items={["Спершу — власний спокійний видих, потім слова", "Назвіть почуття дитини вголос: «Тобі страшно, я поруч»", "Дихайте разом — рахунок або пальці замість пояснень", "Після — коротка звична дія: казка, гра, обійми"]} /></article>
+            <article><span>Заземлення</span><h3>Техніка 5–4–3–2–1</h3><p>Коли тривога забирає відчуття «тут і зараз» — це швидкий спосіб повернутись у тіло й простір.</p><PracticeChecklist {...groundingPractice} /></article>
+            <article><span>Дихання за квадратом</span><h3>Box breathing 4×4</h3><p>Рівномірний ритм заспокоює нервову систему за кілька циклів. Слідкуйте за квадратом і диханням.</p><BreathingIllustration /></article>
+            <article><span>Для батьків</span><h3>Підтримка дитини при тривозі</h3><p>Дитина зчитує стан дорослого швидше за слова. Кілька опор на випадок тривоги чи сирени.</p><PracticeChecklist {...parentingPractice} /></article>
           </div>
         </div>
       </section>
